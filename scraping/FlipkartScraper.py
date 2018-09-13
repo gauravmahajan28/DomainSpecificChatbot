@@ -22,14 +22,16 @@ def scrapeDataForItem(url, category):
 
         i = 0
         j = 0
-
+    data = {}
     while j < len(vals) and i < len(keys):
-        print(keys[j].text)
-        print(vals[j].text)
+
+      #  print(keys[j].text)
+        data[keys[j].text] = vals[j].text
+      #  print(vals[j].text)
         j += 1
         i += 1
-
-        '''
+    print(data)
+    '''
         while j < len(vals) and i < len(keys):
             if (vals[j].get("colspan")):
                 j += 1
@@ -62,7 +64,7 @@ def scrapeDataForItem(url, category):
             print(product["_id"], category)
         except IndexError:
             print("[[No Price]]: " + product["_id"], category)
-'''
+    '''
 
 #  ==========================      SPIDER FOR GOING THROUGH ALL THE LINKS
 def StartSpider():
