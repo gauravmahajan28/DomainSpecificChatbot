@@ -1,4 +1,5 @@
 import requests
+import pymongo
 
 import sys
 import re
@@ -6,6 +7,8 @@ import re
 from bs4 import BeautifulSoup
 
 
+client = pymongo.MongoClient('mongodb://localhost:27017')
+db = client.dialog_system
 
 propertyList = {"price": True}
 brandList = {}
@@ -30,6 +33,7 @@ def scrapeDataForItem(url, category):
       #  print(vals[j].text)
         j += 1
         i += 1
+    db[category].insert_one(data)
     print(data)
     '''
         while j < len(vals) and i < len(keys):
@@ -98,5 +102,5 @@ def StartSpider():
 
 
 StartSpider()
-fptr.close()
-brandptr.close()
+#fptr.close()
+#brandptr.close()
