@@ -1,0 +1,17 @@
+redmi note 4	model
+redmi note 4 pro	model
+redmi 4	model
+redmi 4s	model
+iphone x	model
+iphone xs	model
+camera	attribute
+screen	attribute
+battery	attribute
+processor	attribute
+price	attribute
+mobile	table
+phone	table
+tv	table
+snapdragon	data
+samsung	data
+xiaomi	data
